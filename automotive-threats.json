@@ -1,0 +1,17 @@
+[
+  {
+    "SID": "[1.1]",
+    "target": [
+      "Server"
+    ],
+    "description": "Threats regarding back-end servers related to vehicles in the field",
+    "details": "Back-end servers used as a means to attack a vehicle or extract data",
+    "Likelihood Of Attack": "High",
+    "severity": "High",
+    "condition": "any(target.outputs)",
+    "prerequisites": "",
+    "mitigations": "[M1] Security Controls are applied to back-end systems to minimise the risk of insider attack",
+    "example": "Abuse of privileges by staff (insider attack)",
+    "references": "UN R155"
+  }
+]
