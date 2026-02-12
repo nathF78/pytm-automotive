@@ -1,0 +1,1007 @@
+[
+    {
+        "SID": "[1.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "Abuse of privileges by staff (insider attack)",
+        "details": "[4.3.1] Threats regarding back-end servers related to vehicles in the field - Back-end servers used as a means to attack a vehicle or extract data",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[1.2]",
+        "target": [
+            "Server"
+        ],
+        "description": "Unauthorized internet access to the server (enabled for example by backdoors, unpatched system software vulnerabilities, SQL attacks or other means)",
+        "details": "[4.3.1] Threats regarding back-end servers related to vehicles in the field - Back-end servers used as a means to attack a vehicle or extract data",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[1.3]",
+        "target": [
+            "Server"
+        ],
+        "description": "Unauthorized physical access to the server (conducted by for example USB sticks or other media connecting to the server)",
+        "details": "[4.3.1] Threats regarding back-end servers related to vehicles in the field - Back-end servers used as a means to attack a vehicle or extract data",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[2.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "Attack on back-end server stops it functioning, for example it prevents it from interacting with vehicles and providing services they rely on",
+        "details": "[4.3.1] Threats regarding back-end servers related to vehicles in the field - Services from back-end server being disrupted, affecting the operation of a vehicle",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[3.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "Abuse of privileges by staff (insider attack)",
+        "details": "[4.3.1] Threats regarding back-end servers related to vehicles in the field - Vehicle related data held on back-end servers being lost or compromised (\"data breach\")",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[3.2]",
+        "target": [
+            "Server"
+        ],
+        "description": "Loss of information in the cloud. Sensitive data may be lost due to attacks or accidents when data is stored by third-party cloud service providers",
+        "details": "[4.3.1] Threats regarding back-end servers related to vehicles in the field - Vehicle related data held on back-end servers being lost or compromised (\"data breach\")",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[3.3]",
+        "target": [
+            "Server"
+        ],
+        "description": "Unauthorized internet access to the server (enabled for example by backdoors, unpatched system software vulnerabilities, SQL attacks or other means)",
+        "details": "[4.3.1] Threats regarding back-end servers related to vehicles in the field - Vehicle related data held on back-end servers being lost or compromised (\"data breach\")",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[3.4]",
+        "target": [
+            "Server"
+        ],
+        "description": "Unauthorized physical access to the server (conducted for example by USB sticks or other media connecting to the server)",
+        "details": "[4.3.1] Threats regarding back-end servers related to vehicles in the field - Vehicle related data held on back-end servers being lost or compromised (\"data breach\")",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[3.5]",
+        "target": [
+            "Server"
+        ],
+        "description": "Information breach by unintended sharing of data (e.g. admin errors)",
+        "details": "[4.3.1] Threats regarding back-end servers related to vehicles in the field - Vehicle related data held on back-end servers being lost or compromised (\"data breach\")",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[4.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "Spoofing of messages by impersonation (e.g. 802.11p V2X during platooning, GNSS messages, etc.)",
+        "details": "[4.3.2] Threats to vehicles regarding their communication channels - Spoofing of messages or data received by the vehicle",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[4.2]",
+        "target": [
+            "Server"
+        ],
+        "description": "Sybil attack (in order to spoof other vehicles as if there are many vehicles on the road)",
+        "details": "[4.3.2] Threats to vehicles regarding their communication channels - Spoofing of messages or data received by the vehicle",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[5.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "Communications channels permit code injection, for example tampered software binary might be injected into the communication stream",
+        "details": "[4.3.2] Threats to vehicles regarding their communication channels - Communication channels used to conduct unauthorized manipulation, deletion or other amendments to vehicle held code/data",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[5.2]",
+        "target": [
+            "Server"
+        ],
+        "description": "Communications channels permit manipulate of vehicle held data/code",
+        "details": "[4.3.2] Threats to vehicles regarding their communication channels - Communication channels used to conduct unauthorized manipulation, deletion or other amendments to vehicle held code/data",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[5.3]",
+        "target": [
+            "Server"
+        ],
+        "description": "Communications channels permit overwrite of vehicle held data/code",
+        "details": "[4.3.2] Threats to vehicles regarding their communication channels - Communication channels used to conduct unauthorized manipulation, deletion or other amendments to vehicle held code/data",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[5.4]",
+        "target": [
+            "Server"
+        ],
+        "description": "Communications channels permit erasure of vehicle held data/code",
+        "details": "[4.3.2] Threats to vehicles regarding their communication channels - Communication channels used to conduct unauthorized manipulation, deletion or other amendments to vehicle held code/data",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[5.5]",
+        "target": [
+            "Server"
+        ],
+        "description": "Communications channels permit introduction of data/code to the vehicle (write data code)",
+        "details": "[4.3.2] Threats to vehicles regarding their communication channels - Communication channels used to conduct unauthorized manipulation, deletion or other amendments to vehicle held code/data",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[6.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "Accepting information from an unreliable or untrusted source",
+        "details": "[4.3.2] Threats to vehicles regarding their communication channels - Communication channels permit untrusted/unreliable messages to be accepted or are vulnerable to session hijacking/replay attacks",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[6.2]",
+        "target": [
+            "Server"
+        ],
+        "description": "Man in the middle attack/ session hijacking",
+        "details": "[4.3.2] Threats to vehicles regarding their communication channels - Communication channels permit untrusted/unreliable messages to be accepted or are vulnerable to session hijacking/replay attacks",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[6.3]",
+        "target": [
+            "Server"
+        ],
+        "description": "Replay attack, for example an attack against a communication gateway allows the attacker to downgrade software of an ECU or firmware of the gateway",
+        "details": "[4.3.2] Threats to vehicles regarding their communication channels - Communication channels permit untrusted/unreliable messages to be accepted or are vulnerable to session hijacking/replay attacks",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[7.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "Interception of information / interfering radiations / monitoring communications",
+        "details": "[4.3.2] Threats to vehicles regarding their communication channels - Information can be readily disclosed. For example, through eavesdropping on communications or through allowing unauthorized access to sensitive files or folders",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[7.2]",
+        "target": [
+            "Server"
+        ],
+        "description": "Gaining unauthorized access to files or data",
+        "details": "[4.3.2] Threats to vehicles regarding their communication channels - Information can be readily disclosed. For example, through eavesdropping on communications or through allowing unauthorized access to sensitive files or folders",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[8.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "Sending a large number of garbage data to vehicle information system, so that it is unable to provide services in the normal manner",
+        "details": "[4.3.2] Threats to vehicles regarding their communication channels - Denial of service attacks via communication channels to disrupt vehicle functions",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[8.2]",
+        "target": [
+            "Server"
+        ],
+        "description": "Black hole attack, in order to disrupt communication between vehicles the attacker is able to block messages between the vehicles",
+        "details": "[4.3.2] Threats to vehicles regarding their communication channels - Denial of service attacks via communication channels to disrupt vehicle functions",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[9.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "An unprivileged user is able to gain privileged access, for example root access",
+        "details": "[4.3.2] Threats to vehicles regarding their communication channels - An unprivileged user is able to gain privileged access to vehicle systems",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[10.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "Virus embedded in communication media infects vehicle systems",
+        "details": "[4.3.2] Threats to vehicles regarding their communication channels - Viruses embedded in communication media are able to infect vehicle systems",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[11.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "Malicious internal (e.g. CAN) messages",
+        "details": "[4.3.2] Threats to vehicles regarding their communication channels - Messages received by the vehicle (for example X2V or diagnostic messages), or transmitted within it, contain malicious content",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[11.2]",
+        "target": [
+            "Server"
+        ],
+        "description": "Malicious V2X messages, e.g. infrastructure to vehicle or vehicle-vehicle messages (e.g. CAM, DENM)",
+        "details": "[4.3.2] Threats to vehicles regarding their communication channels - Messages received by the vehicle (for example X2V or diagnostic messages), or transmitted within it, contain malicious content",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[11.3]",
+        "target": [
+            "Server"
+        ],
+        "description": "Malicious diagnostic messages",
+        "details": "[4.3.2] Threats to vehicles regarding their communication channels - Messages received by the vehicle (for example X2V or diagnostic messages), or transmitted within it, contain malicious content",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[11.4]",
+        "target": [
+            "Server"
+        ],
+        "description": "Malicious proprietary messages (e.g. those normally sent from OEM or component/system/function supplier)",
+        "details": "[4.3.2] Threats to vehicles regarding their communication channels - Messages received by the vehicle (for example X2V or diagnostic messages), or transmitted within it, contain malicious content",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[12.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "Compromise of over the air software update procedures. This includes fabricating the system update program or firmware",
+        "details": "[4.3.3.] Threats to vehicles regarding their update procedures - Misuse or compromise of update procedures",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[12.2]",
+        "target": [
+            "Server"
+        ],
+        "description": "Compromise of local/physical software update procedures. This includes fabricating the system update program or firmware",
+        "details": "[4.3.3.] Threats to vehicles regarding their update procedures - Misuse or compromise of update procedures",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[12.3]",
+        "target": [
+            "Server"
+        ],
+        "description": "The software is manipulated before the update process (and is therefore corrupted), although the update process is intact",
+        "details": "[4.3.3.] Threats to vehicles regarding their update procedures - Misuse or compromise of update procedures",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[12.4]",
+        "target": [
+            "Server"
+        ],
+        "description": "Compromise of cryptographic keys of the software provider to allow invalid update",
+        "details": "[4.3.3.] Threats to vehicles regarding their update procedures - Misuse or compromise of update procedures",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[13.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "Denial of Service attack against update server or network to prevent rollout of critical software updates and/or unlock of customer specific features",
+        "details": "[4.3.3.] Threats to vehicles regarding their update procedures - It is possible to deny legitimate updates",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[15.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "Innocent victim (e.g. owner, operator or maintenance engineer) being tricked into taking an action to unintentionally load malware or enable an attack",
+        "details": "[4.3.4] Threats to vehicles regarding unintended human actions facilitating a cyber attack - Legitimate actors are able to take actions that would unwittingly facilitate a cyber-attack",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[15.2]",
+        "target": [
+            "Server"
+        ],
+        "description": "Defined security procedures are not followed",
+        "details": "[4.3.4] Threats to vehicles regarding unintended human actions facilitating a cyber attack - Legitimate actors are able to take actions that would unwittingly facilitate a cyber-attack",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[16.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "Manipulation of functions designed to remotely operate systems, such as remote key, immobilizer, and charging pile",
+        "details": "[4.3.5] Threats to vehicles regarding their external connectivity and connections - Manipulation of the connectivity of vehicle functions enables a cyber-attack, this can include telematics; systems that permit remote operations; and systems using short range wireless communications",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[16.2]",
+        "target": [
+            "Server"
+        ],
+        "description": "Manipulation of vehicle telematics (e.g. manipulate temperature measurement of sensitive goods, remotely unlock cargo doors)",
+        "details": "[4.3.5] Threats to vehicles regarding their external connectivity and connections - Manipulation of the connectivity of vehicle functions enables a cyber-attack, this can include telematics; systems that permit remote operations; and systems using short range wireless communications",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[16.3]",
+        "target": [
+            "Server"
+        ],
+        "description": "Interference with short range wireless systems or sensors",
+        "details": "[4.3.5] Threats to vehicles regarding their external connectivity and connections - Manipulation of the connectivity of vehicle functions enables a cyber-attack, this can include telematics; systems that permit remote operations; and systems using short range wireless communications",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[17.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "Corrupted applications, or those with poor software security, used as a method to attack vehicle systems",
+        "details": "[4.3.5] Threats to vehicles regarding their external connectivity and connections - Hosted 3rd party software, e.g. entertainment applications, used as a means to attack vehicle systems",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[18.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "External interfaces such as USB or other ports used as a point of attack, for example through code injection",
+        "details": "[4.3.5] Threats to vehicles regarding their external connectivity and connections - Devices connected to external interfaces e.g. USB ports, OBD port, used as a means to attack vehicle systems",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[18.2]",
+        "target": [
+            "Server"
+        ],
+        "description": "Media infected with a virus connected to a vehicle system",
+        "details": "[4.3.5] Threats to vehicles regarding their external connectivity and connections - Devices connected to external interfaces e.g. USB ports, OBD port, used as a means to attack vehicle systems",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[18.3]",
+        "target": [
+            "Server"
+        ],
+        "description": "Diagnostic access (e.g. dongles in OBD port) used to facilitate an attack, e.g. manipulate vehicle parameters (directly or indirectly)",
+        "details": "[4.3.5] Threats to vehicles regarding their external connectivity and connections - Devices connected to external interfaces e.g. USB ports, OBD port, used as a means to attack vehicle systems",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[19.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "Extraction of copyright or proprietary software from vehicle systems (product piracy)",
+        "details": "[4.3.6] Threats to vehicle data/code - Extraction of vehicle data/code",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[19.2]",
+        "target": [
+            "Server"
+        ],
+        "description": "Unauthorized access to the owner\u2019s privacy information such as personal identity, payment account information, address book information, location information, vehicle\u2019s electronic ID, etc.",
+        "details": "[4.3.6] Threats to vehicle data/code - Extraction of vehicle data/code",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[19.3]",
+        "target": [
+            "Server"
+        ],
+        "description": "Extraction of cryptographic keys",
+        "details": "[4.3.6] Threats to vehicle data/code - Extraction of vehicle data/code",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[20.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "Illegal/unauthorized changes to vehicle\u2019s electronic ID",
+        "details": "[4.3.6] Threats to vehicle data/code - Manipulation of vehicle data/code",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[20.2]",
+        "target": [
+            "Server"
+        ],
+        "description": "Identity fraud. For example, if a user wants to display another identity when communicating with toll systems, manufacturer backend",
+        "details": "[4.3.6] Threats to vehicle data/code - Manipulation of vehicle data/code",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[20.3]",
+        "target": [
+            "Server"
+        ],
+        "description": "Action to circumvent monitoring systems (e.g. hacking/ tampering/ blocking of messages such as ODR Tracker data, or number of runs)",
+        "details": "[4.3.6] Threats to vehicle data/code - Manipulation of vehicle data/code",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[20.4]",
+        "target": [
+            "Server"
+        ],
+        "description": "Data manipulation to falsify vehicle\u2019s driving data (e.g. mileage, driving speed, driving directions, etc.)",
+        "details": "[4.3.6] Threats to vehicle data/code - Manipulation of vehicle data/code",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[20.5]",
+        "target": [
+            "Server"
+        ],
+        "description": "Unauthorized changes to system diagnostic data",
+        "details": "[4.3.6] Threats to vehicle data/code - Manipulation of vehicle data/code",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[21.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "Unauthorized deletion/manipulation of system event logs",
+        "details": "[4.3.6] Threats to vehicle data/code - Erasure of data/code",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[22.2]",
+        "target": [
+            "Server"
+        ],
+        "description": "Introduce malicious software or malicious software activity",
+        "details": "[4.3.6] Threats to vehicle data/code - Introduction of malware",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[23.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "Fabrication of software of the vehicle control system or information system",
+        "details": "[4.3.6] Threats to vehicle data/code - Introduction of new software or overwrite existing software",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[24.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "Denial of service, for example this may be triggered on the internal network by flooding a CAN bus, or by provoking faults on an ECU via a high rate of messaging",
+        "details": "[4.3.6] Threats to vehicle data/code - Disruption of systems or operations",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[25.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "Unauthorized access of falsify the configuration parameters of vehicle\u2019s key functions, such as brake data, airbag deployed threshold, etc.",
+        "details": "[4.3.6] Threats to vehicle data/code - Manipulation of vehicle parameters",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[25.2]",
+        "target": [
+            "Server"
+        ],
+        "description": "Unauthorized access of falsify the charging parameters, such as charging voltage, charging power, battery temperature, etc.",
+        "details": "[4.3.6] Threats to vehicle data/code - Manipulation of vehicle parameters",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[26.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "Combination of short encryption keys and long period of validity enables attacker to break encryption",
+        "details": "[4.3.7] Potential vulnerabilities that could be exploited if not sufficiently protected or hardened - Cryptographic technologies can be compromised or are insufficiently applied",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[26.2]",
+        "target": [
+            "Server"
+        ],
+        "description": "Insufficient use of cryptographic algorithms to protect sensitive systems",
+        "details": "[4.3.7] Potential vulnerabilities that could be exploited if not sufficiently protected or hardened - Cryptographic technologies can be compromised or are insufficiently applied",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[26.3]",
+        "target": [
+            "Server"
+        ],
+        "description": "Using already or soon to be deprecated cryptographic algorithms",
+        "details": "[4.3.7] Potential vulnerabilities that could be exploited if not sufficiently protected or hardened - Cryptographic technologies can be compromised or are insufficiently applied",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[27.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "Hardware or software, engineered to enable an attack or fails to meet design criteria to stop an attack",
+        "details": "[4.3.7] Potential vulnerabilities that could be exploited if not sufficiently protected or hardened - Parts or supplies could be compromised to permit vehicles to be attacked",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[28.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "Software bugs. The presence of software bugs can be a basis for potential exploitable vulnerabilities. This is particularly true if software has not been tested to verify that known bad code/bugs is not present and reduce the risk of unknown bad code/bugs being present",
+        "details": "[4.3.7] Potential vulnerabilities that could be exploited if not sufficiently protected or hardened - Software or hardware development permits vulnerabilities",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[28.2]",
+        "target": [
+            "Server"
+        ],
+        "description": "Using remainders from development (e.g. debug ports, JTAG ports, microprocessors, development certificates, developer passwords, \u2026) can permit access to ECUs or permit attackers to gain higher privileges",
+        "details": "[4.3.7] Potential vulnerabilities that could be exploited if not sufficiently protected or hardened - Software or hardware development permits vulnerabilities",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[29.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "Superfluous internet ports left open, providing access to network systems",
+        "details": "[4.3.7] Potential vulnerabilities that could be exploited if not sufficiently protected or hardened - Network design introduces vulnerabilities",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[29.2]",
+        "target": [
+            "Server"
+        ],
+        "description": "Circumvent network separation to gain control. Specific example is the use of unprotected gateways, or access points (such as truck-trailer gateways), to circumvent protections and gain access to other network segments to perform malicious acts, such as sending arbitrary CAN bus messages",
+        "details": "[4.3.7] Potential vulnerabilities that could be exploited if not sufficiently protected or hardened - Network design introduces vulnerabilities",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[31.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "Information breach. Personal data may be leaked when the car changes user (e.g. is sold or is used as hire vehicle with new hirers)",
+        "details": "[4.3.7] Potential vulnerabilities that could be exploited if not sufficiently protected or hardened - Unintended transfer of data can \n occur",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    },
+    {
+        "SID": "[32.1]",
+        "target": [
+            "Server"
+        ],
+        "description": "Manipulation of electronic hardware, e.g. unauthorized electronic hardware added to a vehicle to enable \"man-in-the-middle\" attack\nReplacement of authorized electronic hardware (e.g., sensors) with unauthorized electronic hardware\nManipulation of the information collected by a sensor (for example, using a magnet to tamper with the Hall effect sensor connected to the gearbox)",
+        "details": "[4.3.7] Potential vulnerabilities that could be exploited if not sufficiently protected or hardened - Physical manipulation of systems can enable an attack",
+        "Likelihood Of Attack": "",
+        "severity": "",
+        "condition": "True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": ""
+    }
+]
