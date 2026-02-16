@@ -1,0 +1,1037 @@
+[
+    {
+        "SID": "[1.1]",
+        "target": [
+            "Process"
+        ],
+        "description": "Abuse of privileges by staff (insider attack)",
+        "details": "[4.3.1] Threats regarding back-end servers... Back-end servers used as a means to attack a vehicle or extract data",
+        "Likelihood Of Attack": "Low",
+        "severity": "High",
+        "condition": "target.name == 'Backend Server' or target.is_cloud_asset is True",
+        "prerequisites": "Attacker must have employee credentials",
+        "mitigations": "[M1] Security Controls are applied to back-end systems to minimise the risk of insider attack",
+        "example": "Disgruntled employee flushes malicious firmware to fleet",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[1.2]",
+        "target": [
+            "Process"
+        ],
+        "description": "Unauthorized internet access to the server (backdoors, SQL injection)",
+        "details": "[4.3.1] Threats regarding back-end servers... Back-end servers used as a means to attack a vehicle or extract data",
+        "Likelihood Of Attack": "Medium",
+        "severity": "Very High",
+        "condition": "target.is_internet_facing is True",
+        "prerequisites": "Publicly accessible IP",
+        "mitigations": "[M2] Security Controls are applied to back-end systems to minimise unauthorised access. Example Security Controls can be found in OWASP",
+        "example": "SQL Injection on fleet management portal",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[1.3]",
+        "target": [
+            "Process",
+            "Boundary"
+        ],
+        "description": "Unauthorized physical access to the server (USB sticks, etc.)",
+        "details": "[4.3.1] Threats regarding back-end servers... Back-end servers used as a means to attack a vehicle or extract data",
+        "Likelihood Of Attack": "Low",
+        "severity": "High",
+        "condition": "target.has_physical_access is True",
+        "prerequisites": "Physical entry to server room",
+        "mitigations": "[M8] Through system design and access control it should not be possible for unauthorised personnel to access personal or system critical data",
+        "example": "BadUSB plugged into server rack",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[2.1]",
+        "target": [
+            "Process"
+        ],
+        "description": "Attack on back-end server stops it functioning (DoS)",
+        "details": "[4.3.1] Services from back-end server being disrupted, affecting the operation of a vehicle",
+        "Likelihood Of Attack": "High",
+        "severity": "Medium",
+        "condition": "target.name == 'Backend Server'",
+        "prerequisites": "Network access",
+        "mitigations": "[M3] Security Controls are applied to back-end systems. Recovery measures in case of system outage.",
+        "example": "DDoS against navigation update server",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[3.1]",
+        "target": [
+            "DataStore"
+        ],
+        "description": "Abuse of privileges by staff (Data Breach)",
+        "details": "[4.3.1] Vehicle related data held on back-end servers being lost or compromised",
+        "Likelihood Of Attack": "Low",
+        "severity": "High",
+        "condition": "target.stores_sensitive_data is True",
+        "prerequisites": "Database administrative access",
+        "mitigations": "[M1] Insider threat controls",
+        "example": "Admin dumps customer GPS history",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[3.2]",
+        "target": [
+            "DataStore",
+            "Process"
+        ],
+        "description": "Loss of information in the cloud (Third-party provider issues)",
+        "details": "[4.3.1] Vehicle related data held on back-end servers being lost or compromised",
+        "Likelihood Of Attack": "Medium",
+        "severity": "High",
+        "condition": "target.is_cloud_hosted is True",
+        "prerequisites": "Misconfigured S3 bucket",
+        "mitigations": "[M4] Security Controls are applied to minimise risks associated with cloud computing.",
+        "example": "Cloud storage bucket left public",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[3.3]",
+        "target": [
+            "DataStore",
+            "Process"
+        ],
+        "description": "Unauthorized internet access to the server leading to data breach",
+        "details": "[4.3.1] Vehicle related data held on back-end servers being lost or compromised",
+        "Likelihood Of Attack": "Medium",
+        "severity": "High",
+        "condition": "target.is_internet_facing is True and target.stores_sensitive_data is True",
+        "prerequisites": "",
+        "mitigations": "[M2] OWASP Controls",
+        "example": "",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[3.4]",
+        "target": [
+            "DataStore",
+            "Boundary"
+        ],
+        "description": "Unauthorized physical access to the server leading to data breach",
+        "details": "[4.3.1] Vehicle related data held on back-end servers being lost or compromised",
+        "Likelihood Of Attack": "Low",
+        "severity": "High",
+        "condition": "target.has_physical_port is True",
+        "prerequisites": "",
+        "mitigations": "[M8] Physical access controls",
+        "example": "",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[3.5]",
+        "target": [
+            "Process"
+        ],
+        "description": "Information breach by unintended sharing of data (e.g. admin errors)",
+        "details": "[4.3.1] Vehicle related data held on back-end servers being lost or compromised",
+        "Likelihood Of Attack": "Medium",
+        "severity": "Medium",
+        "condition": "target.handles_user_data is True",
+        "prerequisites": "",
+        "mitigations": "[M5] Security Controls are applied to back-end systems to prevent data breaches.",
+        "example": "CC'ing all customers in an email",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[4.1]",
+        "target": [
+            "DataFlow",
+            "ExternalEntity"
+        ],
+        "description": "Spoofing of messages by impersonation (GNSS, V2X)",
+        "details": "[4.3.2] Spoofing of messages or data received by the vehicle",
+        "Likelihood Of Attack": "Medium",
+        "severity": "Very High",
+        "condition": "target.protocol in ['V2X', 'GNSS', 'GPS', '802.11p']",
+        "prerequisites": "SDR (Software Defined Radio)",
+        "mitigations": "[M10] The vehicle shall verify the authenticity and integrity of messages it receives",
+        "example": "GPS Spoofing to alter navigation",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[4.2]",
+        "target": [
+            "DataFlow"
+        ],
+        "description": "Sybil attack (Spoofing multiple vehicles)",
+        "details": "[4.3.2] Spoofing of messages or data received by the vehicle",
+        "Likelihood Of Attack": "Low",
+        "severity": "High",
+        "condition": "target.protocol == 'V2X'",
+        "prerequisites": "Compromised V2X PKI keys or SDR",
+        "mitigations": "[M11] Security controls shall be implemented for storing cryptographic keys",
+        "example": "Fake traffic jam created by one attacker",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[5.1]",
+        "target": [
+            "DataFlow",
+            "Process"
+        ],
+        "description": "Communications channels permit code injection (tampered binary)",
+        "details": "[4.3.2] Communication channels used to conduct unauthorized manipulation to vehicle held code/data",
+        "Likelihood Of Attack": "Medium",
+        "severity": "Very High",
+        "condition": "target.carries_firmware is True",
+        "prerequisites": "Man-in-the-Middle or compromised update server",
+        "mitigations": "[M10] Verify authenticity, [M6] Security by design",
+        "example": "Injecting code via compromised OTA flow",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[5.2]",
+        "target": [
+            "DataFlow"
+        ],
+        "description": "Communications channels permit manipulation of vehicle held data",
+        "details": "[4.3.2] Unauthorized manipulation of vehicle held code/data",
+        "Likelihood Of Attack": "Medium",
+        "severity": "High",
+        "condition": "target.protocol in ['CAN', 'Ethernet', 'LIN']",
+        "prerequisites": "Access to bus",
+        "mitigations": "[M7] Access control techniques",
+        "example": "Modifying sensor values in transit",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[5.3]",
+        "target": [
+            "DataFlow"
+        ],
+        "description": "Communications channels permit overwrite of vehicle held data",
+        "details": "[4.3.2] Unauthorized manipulation/overwrite of vehicle data",
+        "Likelihood Of Attack": "Medium",
+        "severity": "High",
+        "condition": "target.is_writable is True",
+        "prerequisites": "",
+        "mitigations": "[M7] Access control",
+        "example": "Overwriting calibration data via UDS",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[5.4]",
+        "target": [
+            "DataFlow",
+            "Process"
+        ],
+        "description": "Communications channels permit erasure of vehicle held data",
+        "details": "[4.3.2] Unauthorized deletion of vehicle data",
+        "Likelihood Of Attack": "Low",
+        "severity": "High",
+        "condition": "target.protocol == 'UDS' or target.name == 'Diagnostic'",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "Sending UDS ClearMemory command",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[5.5]",
+        "target": [
+            "DataFlow"
+        ],
+        "description": "Communications channels permit introduction of data/code (Write)",
+        "details": "[4.3.2] Unauthorized introduction of code",
+        "Likelihood Of Attack": "Medium",
+        "severity": "High",
+        "condition": "target.is_external is True",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[6.1]",
+        "target": [
+            "Process",
+            "DataFlow"
+        ],
+        "description": "Accepting information from an unreliable or untrusted source",
+        "details": "[4.3.2] Communication channels permit untrusted messages",
+        "Likelihood Of Attack": "Medium",
+        "severity": "Medium",
+        "condition": "target.authenticates_source is False",
+        "prerequisites": "",
+        "mitigations": "[M10] Verify authenticity",
+        "example": "ECU accepts CAN frame without MAC",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[6.2]",
+        "target": [
+            "DataFlow"
+        ],
+        "description": "Man in the middle attack / session hijacking",
+        "details": "[4.3.2] Communication channels vulnerable to session hijacking",
+        "Likelihood Of Attack": "Medium",
+        "severity": "High",
+        "condition": "target.is_encrypted is False or target.protocol == 'Bluetooth'",
+        "prerequisites": "Proximity for wireless, tap for wire",
+        "mitigations": "[M10] Verify authenticity and integrity",
+        "example": "Bluetooth key interception",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[6.3]",
+        "target": [
+            "Process",
+            "DataFlow"
+        ],
+        "description": "Replay attack (e.g. against a communication gateway)",
+        "details": "[4.3.2] Vulnerable to replay attacks",
+        "Likelihood Of Attack": "Medium",
+        "severity": "High",
+        "condition": "target.checks_freshness is False",
+        "prerequisites": "Ability to record traffic",
+        "mitigations": "[M10] Freshness counters/Timestamps",
+        "example": "Replaying Remote Keyless Entry (RKE) signal",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[7.1]",
+        "target": [
+            "DataFlow"
+        ],
+        "description": "Interception of information / interfering radiations / monitoring communications",
+        "details": "[4.3.2] Information can be readily disclosed via eavesdropping",
+        "Likelihood Of Attack": "High",
+        "severity": "Medium",
+        "condition": "target.is_wireless is True and target.is_encrypted is False",
+        "prerequisites": "Sniffer device",
+        "mitigations": "[M12] Confidential data shall be protected",
+        "example": "Sniffing TPMS data",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[7.2]",
+        "target": [
+            "DataStore",
+            "Process"
+        ],
+        "description": "Gaining unauthorized access to files or data",
+        "details": "[4.3.2] Allowing unauthorized access to sensitive files",
+        "Likelihood Of Attack": "Medium",
+        "severity": "High",
+        "condition": "target.stores_pii is True",
+        "prerequisites": "",
+        "mitigations": "[M8] Access control to prevent data access",
+        "example": "Reading contact list from Infotainment",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[8.1]",
+        "target": [
+            "DataFlow",
+            "Process"
+        ],
+        "description": "Flooding (Garbage data) / Denial of Service",
+        "details": "[4.3.2] Denial of service attacks via communication channels",
+        "Likelihood Of Attack": "High",
+        "severity": "High",
+        "condition": "target.protocol in ['CAN', 'Ethernet']",
+        "prerequisites": "Access to bus",
+        "mitigations": "[M13] Measures to detect and recover from DoS",
+        "example": "CAN Bus flooding with 0x00 IDs",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[8.2]",
+        "target": [
+            "DataFlow"
+        ],
+        "description": "Black hole attack (Blocking messages between vehicles)",
+        "details": "[4.3.2] Disrupt communication between vehicles",
+        "Likelihood Of Attack": "Low",
+        "severity": "High",
+        "condition": "target.protocol == 'V2X'",
+        "prerequisites": "Jammer",
+        "mitigations": "[M13] Measures to detect and recover from DoS",
+        "example": "Signal jamming V2X frequencies",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[9.1]",
+        "target": [
+            "Process"
+        ],
+        "description": "Privilege Escalation (Unprivileged user gains root)",
+        "details": "[4.3.2] Unprivileged user is able to gain privileged access",
+        "Likelihood Of Attack": "Low",
+        "severity": "Very High",
+        "condition": "target.runs_as_root is True",
+        "prerequisites": "Shell access",
+        "mitigations": "[M9] Prevent and detect unauthorized access",
+        "example": "Dirty COW exploit on Infotainment OS",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[10.1]",
+        "target": [
+            "Process",
+            "DataFlow"
+        ],
+        "description": "Virus embedded in communication media infects vehicle systems",
+        "details": "[4.3.2] Viruses embedded in communication media",
+        "Likelihood Of Attack": "Medium",
+        "severity": "High",
+        "condition": "target.inputs_from_external is True",
+        "prerequisites": "User connects infected media",
+        "mitigations": "[M14] Anti-malware measures",
+        "example": "Malware on MP3 file via USB",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[11.1]",
+        "target": [
+            "DataFlow"
+        ],
+        "description": "Malicious internal (e.g. CAN) messages",
+        "details": "[4.3.2] Messages transmitted within vehicle contain malicious content",
+        "Likelihood Of Attack": "High",
+        "severity": "High",
+        "condition": "target.protocol == 'CAN'",
+        "prerequisites": "Compromised ECU",
+        "mitigations": "[M15] Intrusion Detection System (IDS)",
+        "example": "Compromised Gateway sends fake brake signal",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[11.2]",
+        "target": [
+            "DataFlow"
+        ],
+        "description": "Malicious V2X messages (CAM, DENM)",
+        "details": "[4.3.2] Messages received by vehicle contain malicious content",
+        "Likelihood Of Attack": "Medium",
+        "severity": "High",
+        "condition": "target.protocol == 'V2X'",
+        "prerequisites": "",
+        "mitigations": "[M10] Verify authenticity",
+        "example": "False Emergency Brake Light warning",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[11.3]",
+        "target": [
+            "DataFlow"
+        ],
+        "description": "Malicious diagnostic messages",
+        "details": "[4.3.2] Messages received by vehicle contain malicious content",
+        "Likelihood Of Attack": "Medium",
+        "severity": "High",
+        "condition": "target.protocol == 'UDS'",
+        "prerequisites": "OBD port access",
+        "mitigations": "[M7] Access control / Secure Gateway",
+        "example": "Fuzzing UDS services",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[11.4]",
+        "target": [
+            "DataFlow"
+        ],
+        "description": "Malicious proprietary messages (OEM specific)",
+        "details": "[4.3.2] Malicious content in proprietary messages",
+        "Likelihood Of Attack": "Low",
+        "severity": "Medium",
+        "condition": "target.is_proprietary is True",
+        "prerequisites": "Reverse engineering of protocol",
+        "mitigations": "",
+        "example": "",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[12.1]",
+        "target": [
+            "Process",
+            "DataFlow"
+        ],
+        "description": "Compromise of OTA software update procedures",
+        "details": "[4.3.3] Misuse or compromise of update procedures",
+        "Likelihood Of Attack": "Low",
+        "severity": "Very High",
+        "condition": "target.name == 'OTA Manager'",
+        "prerequisites": "Compromised backend or key",
+        "mitigations": "[M16] Secure software update procedures",
+        "example": "Pushing unsigned firmware to fleet",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[12.2]",
+        "target": [
+            "Process",
+            "Boundary"
+        ],
+        "description": "Compromise of local/physical software update procedures",
+        "details": "[4.3.3] Misuse or compromise of update procedures via physical port",
+        "Likelihood Of Attack": "Medium",
+        "severity": "High",
+        "condition": "target.name == 'OBD Port'",
+        "prerequisites": "Physical access",
+        "mitigations": "[M16] Secure updates",
+        "example": "Flashing ECU via OBD tool",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[12.3]",
+        "target": [
+            "DataFlow"
+        ],
+        "description": "Software manipulation before update process (Supply Chain Attack)",
+        "details": "[4.3.3] Software corrupted before update, though process is intact",
+        "Likelihood Of Attack": "Low",
+        "severity": "Very High",
+        "condition": "target.is_firmware_binary is True",
+        "prerequisites": "Compromised developer machine",
+        "mitigations": "[M23] Secure development lifecycle",
+        "example": "Malware injected in build server",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[12.4]",
+        "target": [
+            "DataStore"
+        ],
+        "description": "Compromise of cryptographic keys of the software provider",
+        "details": "[4.3.3] Invalid update allowed via key compromise",
+        "Likelihood Of Attack": "Low",
+        "severity": "Very High",
+        "condition": "target.stores_keys is True",
+        "prerequisites": "",
+        "mitigations": "[M11] HSM / Secure Key Storage",
+        "example": "Signing key stolen from server",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[13.1]",
+        "target": [
+            "Process",
+            "DataFlow"
+        ],
+        "description": "DoS against update server to prevent critical updates",
+        "details": "[4.3.3] Deny legitimate updates",
+        "Likelihood Of Attack": "Medium",
+        "severity": "Medium",
+        "condition": "target.name == 'OTA Manager' or target.name == 'Backend Server'",
+        "prerequisites": "",
+        "mitigations": "[M3] Redundancy and Recovery",
+        "example": "",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[15.1]",
+        "target": [
+            "ExternalEntity"
+        ],
+        "description": "Social Engineering / Tricking innocent victim",
+        "details": "[4.3.4] Legitimate actors unwittingly facilitate cyber-attack",
+        "Likelihood Of Attack": "Medium",
+        "severity": "Medium",
+        "condition": "target.is_human is True",
+        "prerequisites": "",
+        "mitigations": "[M18] User roles and privileges",
+        "example": "Phishing email to car owner to click link in car browser",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[15.2]",
+        "target": [
+            "Process"
+        ],
+        "description": "Defined security procedures are not followed (Process failure)",
+        "details": "[4.3.4] Legitimate actors unwittingly facilitate cyber-attack",
+        "Likelihood Of Attack": "High",
+        "severity": "Medium",
+        "condition": "target.requires_manual_config is True",
+        "prerequisites": "Poor training",
+        "mitigations": "[M19] Logging of actions",
+        "example": "Engineer leaves debug port open",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[16.1]",
+        "target": [
+            "Process",
+            "DataFlow"
+        ],
+        "description": "Manipulation of remote operation functions (Key, Immobilizer)",
+        "details": "[4.3.5] Manipulation of connectivity of vehicle functions (Remote Key, Charging)",
+        "Likelihood Of Attack": "Medium",
+        "severity": "High",
+        "condition": "target.function in ['RKE', 'Immobilizer', 'Charging']",
+        "prerequisites": "Signal capture",
+        "mitigations": "[M20] Security controls on remote access",
+        "example": "RollJam attack on Keyfob",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[16.2]",
+        "target": [
+            "Process"
+        ],
+        "description": "Manipulation of vehicle telematics (e.g. cargo doors)",
+        "details": "[4.3.5] Manipulation of connectivity to attack telematics",
+        "Likelihood Of Attack": "Medium",
+        "severity": "High",
+        "condition": "target.name == 'Telematics Unit'",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "Remotely unlocking truck cargo",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[16.3]",
+        "target": [
+            "ExternalEntity",
+            "DataFlow"
+        ],
+        "description": "Interference with short range wireless systems (Bluetooth, NFC)",
+        "details": "[4.3.5] Manipulation of short range wireless",
+        "Likelihood Of Attack": "Medium",
+        "severity": "Low",
+        "condition": "target.protocol in ['Bluetooth', 'NFC', 'WiFi']",
+        "prerequisites": "Close proximity",
+        "mitigations": "",
+        "example": "Bluetooth pairing flood",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[17.1]",
+        "target": [
+            "Process"
+        ],
+        "description": "Compromised 3rd party applications (Infotainment apps)",
+        "details": "[4.3.5] Hosted 3rd party software used to attack vehicle",
+        "Likelihood Of Attack": "High",
+        "severity": "Medium",
+        "condition": "target.name == 'Infotainment' or target.runs_third_party_apps is True",
+        "prerequisites": "App store access",
+        "mitigations": "[M21] App sandboxing and signing",
+        "example": "Malicious music player app exploits buffer overflow",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[18.1]",
+        "target": [
+            "Boundary",
+            "Process"
+        ],
+        "description": "External interfaces (USB) used for code injection",
+        "details": "[4.3.5] USB ports, OBD port used to attack vehicle",
+        "Likelihood Of Attack": "Medium",
+        "severity": "High",
+        "condition": "target.name == 'USB Port'",
+        "prerequisites": "Physical access",
+        "mitigations": "[M22] Security controls on external interfaces",
+        "example": "USB Rubber Ducky",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[18.2]",
+        "target": [
+            "ExternalEntity"
+        ],
+        "description": "Infected media connected to system",
+        "details": "[4.3.5] Devices connected to external interfaces",
+        "Likelihood Of Attack": "Medium",
+        "severity": "Medium",
+        "condition": "target.type == 'Storage Media'",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[18.3]",
+        "target": [
+            "Boundary",
+            "Process"
+        ],
+        "description": "Diagnostic access (OBD dongle) used to facilitate attack",
+        "details": "[4.3.5] Dongles in OBD port used to manipulate parameters",
+        "Likelihood Of Attack": "High",
+        "severity": "Medium",
+        "condition": "target.name == 'OBD Port'",
+        "prerequisites": "Dongle installation",
+        "mitigations": "[M22] Security controls on external interfaces",
+        "example": "Insurance dongle hacked to inject CAN messages",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[19.1]",
+        "target": [
+            "DataStore",
+            "Process"
+        ],
+        "description": "Extraction of copyright/proprietary software (Piracy)",
+        "details": "[4.3.6] Extraction of vehicle data/code",
+        "Likelihood Of Attack": "Medium",
+        "severity": "Low",
+        "condition": "target.stores_firmware is True",
+        "prerequisites": "JTAG or Read access",
+        "mitigations": "[M7] Access control, Read-out protection",
+        "example": "Dumping ECU firmware for tuning",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[19.2]",
+        "target": [
+            "DataStore"
+        ],
+        "description": "Unauthorized access to privacy info (PII, Locations)",
+        "details": "[4.3.6] Extraction of personal data",
+        "Likelihood Of Attack": "Medium",
+        "severity": "High",
+        "condition": "target.stores_pii is True",
+        "prerequisites": "",
+        "mitigations": "[M8] Privacy controls",
+        "example": "Extracting GPS home location",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[19.3]",
+        "target": [
+            "DataStore"
+        ],
+        "description": "Extraction of cryptographic keys",
+        "details": "[4.3.6] Extraction of vehicle data/code",
+        "Likelihood Of Attack": "Low",
+        "severity": "Very High",
+        "condition": "target.stores_keys is True",
+        "prerequisites": "Side-channel attack or Root access",
+        "mitigations": "[M11] HSM usage",
+        "example": "Extracting private key for secure boot",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[20.1]",
+        "target": [
+            "DataStore"
+        ],
+        "description": "Illegal changes to vehicle's electronic ID (VIN manipulation)",
+        "details": "[4.3.6] Manipulation of vehicle data/code",
+        "Likelihood Of Attack": "Low",
+        "severity": "Medium",
+        "condition": "target.name == 'VIN Storage'",
+        "prerequisites": "Physical/Diagnostic access",
+        "mitigations": "[M7] Access control",
+        "example": "VIN Swapping",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[20.2]",
+        "target": [
+            "DataFlow"
+        ],
+        "description": "Identity fraud (Tolling systems)",
+        "details": "[4.3.6] Displaying another identity",
+        "Likelihood Of Attack": "Low",
+        "severity": "Medium",
+        "condition": "target.protocol == 'V2X' or target.protocol == 'RFID'",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "Spoofing toll transponder",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[20.3]",
+        "target": [
+            "DataFlow",
+            "Process"
+        ],
+        "description": "Circumventing monitoring systems (Odometer, Tracker)",
+        "details": "[4.3.6] Hacking/Tampering ODR or Tracker data",
+        "Likelihood Of Attack": "High",
+        "severity": "Medium",
+        "condition": "target.function == 'Monitoring'",
+        "prerequisites": "",
+        "mitigations": "[M7] Access control, Correlation of data",
+        "example": "Blocking GPS tracker for insurance",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[20.4]",
+        "target": [
+            "DataStore",
+            "Process"
+        ],
+        "description": "Falsifying vehicle driving data (Mileage/Odometer fraud)",
+        "details": "[4.3.6] Data manipulation to falsify mileage",
+        "Likelihood Of Attack": "High",
+        "severity": "Low",
+        "condition": "target.name == 'Odometer'",
+        "prerequisites": "Odometer correction tool",
+        "mitigations": "",
+        "example": "Rolling back odometer",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[20.5]",
+        "target": [
+            "DataStore"
+        ],
+        "description": "Unauthorized changes to system diagnostic data",
+        "details": "[4.3.6] Manipulation of diagnostic data (DTCs)",
+        "Likelihood Of Attack": "Medium",
+        "severity": "Low",
+        "condition": "target.name == 'DTC Storage'",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "Clearing crash data",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[21.1]",
+        "target": [
+            "DataStore"
+        ],
+        "description": "Unauthorized deletion/manipulation of system event logs",
+        "details": "[4.3.6] Erasure of data/code",
+        "Likelihood Of Attack": "Medium",
+        "severity": "Medium",
+        "condition": "target.name == 'Log Storage'",
+        "prerequisites": "Root access",
+        "mitigations": "[M7] Access control, WORM storage",
+        "example": "Deleting logs to cover tracks",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[22.2]",
+        "target": [
+            "Process"
+        ],
+        "description": "Introduce malicious software (Malware/Ransomware)",
+        "details": "[4.3.6] Introduction of malware",
+        "Likelihood Of Attack": "Low",
+        "severity": "Very High",
+        "condition": "target.os is not None",
+        "prerequisites": "Exploit chain",
+        "mitigations": "[M7] Access control",
+        "example": "Ransomware on Head Unit",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[23.1]",
+        "target": [
+            "Process",
+            "DataStore"
+        ],
+        "description": "Fabrication of software of vehicle control system",
+        "details": "[4.3.6] Introduction of new software or overwrite existing",
+        "Likelihood Of Attack": "Low",
+        "severity": "Very High",
+        "condition": "target.is_safety_critical is True",
+        "prerequisites": "Bypassed Secure Boot",
+        "mitigations": "",
+        "example": "Modified engine mapping",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[24.1]",
+        "target": [
+            "DataFlow"
+        ],
+        "description": "Denial of service (CAN Bus flooding)",
+        "details": "[4.3.6] Flooding CAN bus or provoking faults",
+        "Likelihood Of Attack": "High",
+        "severity": "High",
+        "condition": "target.protocol == 'CAN'",
+        "prerequisites": "Bus access",
+        "mitigations": "[M13] DoS detection",
+        "example": "100% bus load injection",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[25.1]",
+        "target": [
+            "DataStore",
+            "Process"
+        ],
+        "description": "Falsify configuration parameters (Brakes, Airbag)",
+        "details": "[4.3.6] Manipulation of vehicle parameters",
+        "Likelihood Of Attack": "Low",
+        "severity": "Very High",
+        "condition": "target.is_safety_critical is True",
+        "prerequisites": "Diagnostic session",
+        "mitigations": "[M7] Access control",
+        "example": "Disabling airbag via coding",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[25.2]",
+        "target": [
+            "Process",
+            "DataFlow"
+        ],
+        "description": "Falsify charging parameters (Voltage, Power)",
+        "details": "[4.3.6] Manipulation of vehicle parameters for charging",
+        "Likelihood Of Attack": "Low",
+        "severity": "High",
+        "condition": "target.function == 'BMS' or target.function == 'Charging'",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "Overcharging battery to cause thermal runaway",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[26.1]",
+        "target": [
+            "DataStore",
+            "DataFlow"
+        ],
+        "description": "Weak encryption (Short keys / Long validity)",
+        "details": "[4.3.7] Cryptographic technologies can be compromised",
+        "Likelihood Of Attack": "Medium",
+        "severity": "High",
+        "condition": "target.uses_cryptography is True",
+        "prerequisites": "Time/Compute power",
+        "mitigations": "[M23] Best practices",
+        "example": "Brute forcing short WiFi password",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[26.2]",
+        "target": [
+            "DataFlow",
+            "DataStore"
+        ],
+        "description": "Insufficient use of cryptographic algorithms",
+        "details": "[4.3.7] Cryptography insufficiently applied",
+        "Likelihood Of Attack": "Medium",
+        "severity": "High",
+        "condition": "target.is_sensitive is True and target.is_encrypted is False",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "Storing passwords in plain text",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[26.3]",
+        "target": [
+            "DataFlow"
+        ],
+        "description": "Using deprecated cryptographic algorithms (SHA1, MD5)",
+        "details": "[4.3.7] Cryptographic technologies can be compromised",
+        "Likelihood Of Attack": "Medium",
+        "severity": "High",
+        "condition": "target.crypto_algo in ['MD5', 'SHA1', 'DES']",
+        "prerequisites": "",
+        "mitigations": "",
+        "example": "Collision attack on MD5 signature",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[27.1]",
+        "target": [
+            "ExternalEntity"
+        ],
+        "description": "Supply chain compromise (Hardware/Software)",
+        "details": "[4.3.7] Parts or supplies could be compromised",
+        "Likelihood Of Attack": "Low",
+        "severity": "Very High",
+        "condition": "target.is_third_party is True",
+        "prerequisites": "Compromised supplier",
+        "mitigations": "[M23] Best practices",
+        "example": "Chip backdoor",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[28.1]",
+        "target": [
+            "Process"
+        ],
+        "description": "Software bugs / Lack of testing",
+        "details": "[4.3.7] Software development permits vulnerabilities",
+        "Likelihood Of Attack": "High",
+        "severity": "Medium",
+        "condition": "target.code_quality == 'Low'",
+        "prerequisites": "",
+        "mitigations": "[M23] Best practices, Testing",
+        "example": "Buffer overflow in Bluetooth stack",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[28.2]",
+        "target": [
+            "Boundary",
+            "Process"
+        ],
+        "description": "Debug ports / JTAG left open",
+        "details": "[4.3.7] Using remainders from development can permit access",
+        "Likelihood Of Attack": "Medium",
+        "severity": "Very High",
+        "condition": "target.name == 'JTAG' or target.has_debug_interface is True",
+        "prerequisites": "Physical access to PCB",
+        "mitigations": "",
+        "example": "Connecting to JTAG to dump firmware",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[29.1]",
+        "target": [
+            "Process",
+            "Boundary"
+        ],
+        "description": "Superfluous internet ports left open",
+        "details": "[4.3.7] Network design introduces vulnerabilities",
+        "Likelihood Of Attack": "High",
+        "severity": "High",
+        "condition": "target.open_ports is not None",
+        "prerequisites": "Port scan",
+        "mitigations": "",
+        "example": "Telnet port 23 left open",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[29.2]",
+        "target": [
+            "Process",
+            "DataFlow"
+        ],
+        "description": "Circumvent network separation (Gateway bypass)",
+        "details": "[4.3.7] Access points used to circumvent protection",
+        "Likelihood Of Attack": "Medium",
+        "severity": "Very High",
+        "condition": "target.name == 'Gateway'",
+        "prerequisites": "",
+        "mitigations": "[M23] Best practices",
+        "example": "Bridging Infotainment WiFi to Safety CAN",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[31.1]",
+        "target": [
+            "DataStore"
+        ],
+        "description": "Data leak when car changes user (Rental/Sale)",
+        "details": "[4.3.7] Unintended transfer of data can occur",
+        "Likelihood Of Attack": "High",
+        "severity": "Medium",
+        "condition": "target.stores_pii is True",
+        "prerequisites": "Physical access by next owner",
+        "mitigations": "[M24] Data protection",
+        "example": "Previous owner's phone contacts still in car",
+        "references": "UN R155"
+    },
+    {
+        "SID": "[32.1]",
+        "target": [
+            "ExternalEntity"
+        ],
+        "description": "Manipulation of electronic hardware (Sensors/Actuators)",
+        "details": "[4.3.7] Physical manipulation of systems (Magnet on Hall sensor)",
+        "Likelihood Of Attack": "Medium",
+        "severity": "High",
+        "condition": "target.type == 'Sensor'",
+        "prerequisites": "Physical access to exterior",
+        "mitigations": "[M9] Detect unauthorized access",
+        "example": "Magnet placed on gearbox speed sensor",
+        "references": "UN R155"
+    }
+]
